@@ -1,0 +1,200 @@
+/* Ensure proper alignment and spacing for the keyboard layout */
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('fonts/customFonts.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.output-container {
+    font-family: 'CustomFont', sans-serif;
+    font-size: 24px;
+    border: 5px solid #d29393;
+    padding: 10px;
+    margin: 40px auto;
+    max-width: 800px;
+    min-height: 50px;
+    background-color: #e4dbdb;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+figure.keyboard {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin: 10px auto;
+    max-width: 800px;
+    font-family: "Duru Sans", Arial, sans-serif;
+    padding: 15px 9px;
+    border: 10px solid rgb(160, 160, 160);
+    box-sizing: border-box;
+    box-shadow: 0px 5px 0px rgb(187, 84, 84), 0px 2px 0px rgb(175, 167, 167), 0px 3px 0px rgb(125, 125, 125), 0px 4px 0px rgb(150, 150, 150), 0px 5px 0px rgb(156, 172, 212), 0px -10px 40px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    background: rgb(108, 18, 18);
+    background: url('https://d36xtkk24g8jdx.cloudfront.net/bluebar/f0c1312/images/shared/noise-2.png'), linear-gradient(to bottom, rgb(230, 94, 193) 0%, rgb(124, 222, 235) 95%, rgb(141, 201, 198) 100%);
+}
+
+figure.keyboard .key {
+    padding: 12px;
+    padding: 8px 19px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'CustomFont', sans-serif;
+    cursor: pointer;
+    border: 7px solid #d5e0bd;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+figure.keyboard .key:hover {
+    background-color: #7b928500;
+}
+
+figure.keyboard .key-space {
+    grid-column: span 1;
+    /* Space key alignment in Row 3 */
+}
+
+figure.keyboard .key-size-2 {
+    grid-column: span 2;
+}
+
+figure.keyboard .key-size-3 {
+    grid-column: span 3;
+}
+
+figure.keyboard .key-size-4 {
+    grid-column: span 4;
+}
+
+figure.keyboard .key-size-5 {
+    grid-column: span 5;
+}
+
+figure.keyboard .key-size-6 {
+    grid-column: span 6;
+}
+
+figure.keyboard .key-size-7 {
+    grid-column: span 7;
+}
+
+
+/* Specific alignments */
+
+figure.keyboard>div:nth-child(-n+10) {
+    /* Row 1 (numbers) */
+    justify-self: center;
+}
+
+figure.keyboard>div:nth-child(n+11):nth-child(-n+20) {
+    /* Row 2 (alphabet) */
+    justify-self: center;
+}
+
+figure.keyboard>div:nth-child(n+21):nth-child(-n+30) {
+    /* Row 3 (alphabet + space) */
+    justify-self: center;
+}
+
+figure.keyboard>div:nth-child(n+31) {
+    /* Row 4 (alphabet) */
+    justify-self: center;
+    padding: 7px 19px;
+}
+
+figure.keyboard>div:nth-child(30) {
+    /* Row 3 (alphabet + space) */
+    border-radius: 120px;
+    justify-self: center;
+    border: 7px solid #4c4a13;
+}
+
+figure.keyboard>div:nth-child(40) {
+    /* Row 3 (alphabet + space) */
+    border-radius: 100px;
+    justify-self: center;
+    border: 7px solid #4c4a13;
+}
+
+
+/* Styling for emoji container */
+
+.emoji-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* 6 columns */
+    gap: 5px;
+    /* Space between emojis */
+    padding: 17px;
+    /* Padding around the container */
+    background-color: #fff;
+    /* Background color for visibility */
+    border: 1px solid #ccc;
+    /* Border around the container */
+    border-radius: 50px;
+    /* Rounded corners */
+    position: absolute;
+    /* Position relative to the parent container */
+    top: 100%;
+    /* Position below the emoji button */
+    left: 0;
+    /* Align to the left */
+    width: calc(100% - 20px);
+    /* Adjust width to fit within the keyboard */
+    box-sizing: border-box;
+    /* Ensure padding/border are included in the width */
+    display: none;
+    /* Initially hidden */
+}
+
+.emoji-container .emoji {
+    font-size: 24px;
+    /* Adjust size of emojis */
+    text-align: center;
+    /* Center text within emoji buttons */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+#emoji-button {
+    /* Styling for the emoji button */
+    font-size: 24px;
+    /* Adjust size */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+
+/* Ensure the keyboard and emoji container are not overlapping */
+
+figure.keyboard {
+    position: relative;
+    /* Ensure emoji container is positioned relative to the keyboard */
+}
+
+figure.keyboard>div:nth-child(31) {
+    /* Row 3 (alphabet + space) */
+    border-radius: 100px;
+    justify-self: center;
+    padding: 7px 11px;
+    border: 7px solid #4c4a13;
+}
+
+figure.keyboard>div:nth-child(41) {
+    /* Row 3 (alphabet + space) */
+    border-radius: 120px;
+    justify-self: center;
+    padding: 7px 17px;
+    border: 7px solid #4c4a13;
+}
